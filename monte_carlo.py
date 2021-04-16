@@ -32,10 +32,8 @@ def get_simulation(ticker, name):
 
     plt.figure(figsize=(10,6))
     plt.title("1 year Monte Carlo Simulation for " + name)
-    plt.ylabel("Price (P)")
-    plt.xlabel("Time (Days)")
-    plt.plot(price_list)
-    plt.savefig("tempplot.png")
+    plt.xlabel("Price (P)")
+    plt.hist(price_list, bins = 10)
     plt.show()
 
 
