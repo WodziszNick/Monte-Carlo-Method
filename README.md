@@ -10,6 +10,7 @@ Monte-Carlo-Method is open to contributions, but I recommend creating an issue o
 - Pandas datareader is a sub package that allows one to create a dataframe from various internet datasources
 - Adjusted close is the closing price after adjustments for all applicable splits and dividend distributions.
 - Pandas dataframe.pct_change() function calculates the percentage change between the current and a prior element. This function by default calculates the percentage change from the immediately previous row.
+- want to add to this 
 
 
 # Some maths behind the program
