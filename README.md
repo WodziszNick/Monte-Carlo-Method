@@ -10,7 +10,17 @@ Monte-Carlo-Method is open to contributions, but I recommend creating an issue o
 - Pandas datareader is a sub package that allows one to create a dataframe from various internet datasources
 - Adjusted close is the closing price after adjustments for all applicable splits and dividend distributions.
 - Pandas dataframe.pct_change() function calculates the percentage change between the current and a prior element. This function by default calculates the percentage change from the immediately previous row.
-- 
+- .mean() is a function to calculate the mean. 
+- .var() is a function to calculate the variance.
+- drift is the change of the average value of the stock over time. 
+- .std() is a function to calculate the standard deviation. 
+- t_intervals is the projected amount in days
+- iterations is the amount of simulations ran
+- daily_returns is a creation of random future values for each day. This is created by a random percentage value along with the previously defined variables as seen in the code. 
+- S0 indexes the last row of the data
+- np.zeros_like(daily_returns) is created as an array of zeros of the same shape of the daily_returns array, we can then append actual values. 
+- price_list[0] = S0 is the initialization of the data at the start point
+
 
 # Some maths behind the program
 
