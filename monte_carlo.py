@@ -17,8 +17,8 @@ def get_simulation(ticker, name):
     drift = u - (0.5 * var)
     stdev = log_returns.std()
 
-    t_intervals = 90
-    iterations = 50
+    t_intervals = 365
+    iterations = 500
 
     daily_returns = np.exp(drift.values + stdev.values * norm.ppf(np.random.rand(t_intervals, iterations)))
 
@@ -35,11 +35,12 @@ def get_simulation(ticker, name):
 
     final_mean = end_value.mean()
     final_std = end_value.std()
-    z_score = 1.960 # 95% c.i.
+    z_score = 1.960 # for 95% confidence interval
 
     marign_of_error = z_score*(final_std / np.sqrt(iterations))
     
-    confidence_interval = str(final_mean) + " +/- " + str(marign_of_error)
+    confidence_interval = "For a 95% confidence interval, there is a " + " +/- " + str(marign_of_error) + " margin of error" + " from the mean of " + str(final_mean)
+    print(confidence_interval)
 
     plt.figure(figsize=(10,6))
     plt.title("1 year Monte Carlo Simulation for " + name)
