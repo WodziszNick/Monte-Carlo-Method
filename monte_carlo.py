@@ -17,23 +17,36 @@ def get_simulation(ticker, name):
     drift = u - (0.5 * var)
     stdev = log_returns.std()
 
-    t_intervals = 365
-    iterations = 10 
+    t_intervals = 90
+    iterations = 50
 
     daily_returns = np.exp(drift.values + stdev.values * norm.ppf(np.random.rand(t_intervals, iterations)))
 
     S0 = data.iloc[-1]
 
-    price_list = np.zeros_like(daily_returns)
+    price_list = np.zeros_like(daily_returns) 
     price_list[0] = S0
 
     for t in range(1, t_intervals):
         price_list[t] = price_list[t - 1] * daily_returns[t]
 
+    end_value = (price_list[-1])
+    
+
+    final_mean = end_value.mean()
+    final_std = end_value.std()
+    z_score = 1.960 # 95% c.i.
+
+    marign_of_error = z_score*(final_std / np.sqrt(iterations))
+    
+    confidence_interval = str(final_mean) + " +/- " + str(marign_of_error)
+
     plt.figure(figsize=(10,6))
     plt.title("1 year Monte Carlo Simulation for " + name)
-    plt.xlabel("Price (P)")
-    plt.hist(price_list, bins = 10)
+    plt.ylabel("Price (P)")
+    plt.xlabel("Time (Days)")
+    plt.plot(price_list)
+    plt.savefig("tempplot.png")
     plt.show()
 
 
