@@ -1,5 +1,5 @@
 # Monte-Carlo-Method 🐍 
-Monte Carlo stimulation algorithm for stocks and financial instruments with Python, Numpy and Matplotlib.
+Monte Carlo simulation algorithm for stocks and financial instruments with Python, Numpy and Matplotlib.
 
 # Contributions
 Monte-Carlo-Method is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
